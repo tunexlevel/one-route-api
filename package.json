@@ -1,0 +1,27 @@
+{
+  "scripts": {
+    "start": "nodemon --exec babel-node -- index.js",
+    "make-model": "npx sequelize-cli model:generate --name Message --attributes xxx:string",
+    "migrate": "npx sequelize-cli db:migrate",
+    "down": "npx sequelize-cli db:migrate:undo",
+    "make-seed": "npx sequelize-cli seed:generate --name messages",
+    "seed": "npx sequelize-cli db:seed:all",
+    "undo-seed": "npx sequelize-cli db:seed:undo"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.2",
+    "moment": "^2.29.3",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.21.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.4.1"
+  }
+}
