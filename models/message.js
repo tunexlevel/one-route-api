@@ -20,7 +20,6 @@ module.exports = (sequelize, DataTypes) => {
     msg_id: DataTypes.STRING,
     message: DataTypes.STRING,
     type: DataTypes.STRING,
-    key: DataTypes.STRING,
     timestamp: DataTypes.DATE,
   }, {
     sequelize,
