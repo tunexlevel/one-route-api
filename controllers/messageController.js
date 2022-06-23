@@ -12,6 +12,8 @@ class messageController {
         this.message = data.message;
         this.timestamp = data.timestamp;
         this.name = data.name;
+        this.start = data.start || 0; //where to start getting the whole messages from
+        this.limit = data.limit || 20; //maximium number of messages to display
     }
 
     setupConfig() {
@@ -22,6 +24,16 @@ class messageController {
 
     async receiveMessage() {
         const setup = await Message.findOne({ order: [['id', 'DESC']], where: { phone_no: this.phone_no, type: 'inbox' } });
+
+        if (!setup) {
+            return { status: 200, message: "No message found" };
+        }
+
+        return { status: 200, message: setup }
+    }
+
+    async interaction() {
+        const setup = await Message.findAll({ where: { phone_no: this.phone_no },  offset: this.start, limit: this.limit});
 
         if (!setup) {
             return { status: 200, message: "No message found" };
