@@ -59,17 +59,19 @@ const router = (router) => {
         if (!req.params.phone_no) {
             return res.status(400).json({ error: "phone number is required" });
         }
-        if (req.query.start && isNaN(parseInt(req.query.start))) {
+        
+        if (req.query.start && (isNaN(req.query.start) || isNaN(parseInt(req.query.start)))) {
             return res.status(400).json({ error: "start must be an integer" });
         }
-        if (req.query.limit && isNaN(parseInt(req.query.limit))) {
+        
+        if (req.query.limit && (isNaN(req.query.limit) || isNaN(parseInt(req.query.limit)))) {
             return res.status(400).json({ error: "limit must be an integer" });
         }
 
         let message = new messageController({
             phone_no: req.params.phone_no,
-            start: req.query.start,
-            limit: req.query.limit
+            start: parseInt(req.query.start),
+            limit: parseInt(req.query.limit)
         })
         let reply = await message.interaction();
 
