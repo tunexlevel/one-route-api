@@ -10,7 +10,6 @@
   <p align="center">
     An API for sending and receiving whatsapp messages seemlessly
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://xxxxxx.com/api-docs">View Demo</a>
@@ -95,7 +94,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/tunexlevel) - tunexlevel@gmail.com
+Your Name - [@tunexlevel](https://twitter.com/tunexlevel) - tunexlevel@gmail.com
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
