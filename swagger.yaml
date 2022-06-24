@@ -38,6 +38,7 @@ paths:
         - in: "path"
           name: "phone_no"
           description: "The phone number required"
+          example: "2348069536789"
           required: true
           schema:
             type: "string"
@@ -55,16 +56,19 @@ paths:
         - in: "path"
           name: "phone_no"
           description: "The phone number required"
+          example: "2348069536789"
           required: true
           schema:
             type: "string"
         - in: "path"
           name: "start"
           description: "The page to start from"
+          value: "0"
           schema:
             type: "integer"
         - in: "path"
           name: "limit"
+          value: "10"
           description: "The maximun number of messages to display"
           schema:
             type: "integer"
