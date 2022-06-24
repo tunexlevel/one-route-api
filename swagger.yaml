@@ -38,7 +38,7 @@ paths:
         - in: "path"
           name: "phone_no"
           description: "The phone number required"
-          example: "2348069536789"
+          example: "2348069538862"
           required: true
           schema:
             type: "string"
@@ -56,7 +56,7 @@ paths:
         - in: "path"
           name: "phone_no"
           description: "The phone number required"
-          example: "2348069536789"
+          example: "2348069538862"
           required: true
           schema:
             type: "string"
@@ -148,7 +148,7 @@ paths:
         - in: "path"
           name: "phone_no"
           description: "The phone number to setup"
-          example: "2348069536789"
+          example: "2348069538862"
           required: true
           schema:
             type: "string"
@@ -165,7 +165,7 @@ paths:
         - in: "path"
           name: "phone_no"
           description: "The phone number required"
-          example: "2348069536789"
+          example: "2348069538862"
           required: true
           schema:
             type: "string"
@@ -181,7 +181,7 @@ definitions:
       phone_no:
         type: "string"
         description: "Phone number"
-        example: "2348069536789"
+        example: "2348069538862"
       message:
         type: "string"
         example: "Gooday my friend!"
@@ -195,4 +195,4 @@ definitions:
       phone_no:
         type: "string"
         description: "Phone number"
-        example: "2348069536789"
+        example: "2348069538862"
