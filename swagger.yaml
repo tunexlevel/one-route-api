@@ -1,0 +1,112 @@
+swagger: "2.0"
+info:
+  description: "An API for sending and receiving whatsapp messages seemlessly"
+  version: "1.0.0"
+  title: "One Route APO"
+  contact:
+    email: "tunexlevel8@gmail.com"
+host: "localhost:400"
+tags:
+  - name: "message"
+    description: "Everything about messages"
+  - name: "setup"
+    description: "Setup phone number for messaging"
+paths:
+  /message:
+    post:
+      tags:
+        - "message"
+      summary: "Send a message to a whatsapp number"
+      parameters:
+        - in: "query"
+          name: "message"
+          description: "The content of the message"
+          required: true
+          schema:
+            type: "string"
+        - in: "query"
+          name: "phone_no"
+          description: "The content of the message"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "400":
+          description: "Invalid response"
+        "200":
+          description: "Successful response"
+  /{phone_no}/message:
+    get:
+      tags:
+        - "message"
+      summary: "Receive a message sent from your whatsapp number"
+      parameters:
+        - in: "path"
+          name: "phone_no"
+          description: "The phone number required"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "400":
+          description: "Invalid response"
+        "200":
+          description: "Successful response"
+  /{phone_no}/interaction:
+    get:
+      tags:
+        - "message"
+      summary: "Receive all interactions for a phone number"
+      parameters:
+        - in: "path"
+          name: "phone_no"
+          description: "The phone number required"
+          required: true
+          schema:
+            type: "string"
+        - in: "path"
+          name: "start"
+          description: "The page to start from"
+          schema:
+            type: "integer"
+        - in: "path"
+          name: "limit"
+          description: "The maximun number of messages to display"
+          schema:
+            type: "integer"
+      responses:
+        "400":
+          description: "Invalid response"
+        "200":
+          description: "Successful response"
+  /template/message:
+    post:
+      tags:
+        - "message"
+      summary: "Send a message to a whatsapp number using a template"
+      parameters:
+        - in: "query"
+          name: "name"
+          description: "The name of the template"
+          example: "first_welcome_messsage"
+          required: true
+          schema:
+            type: "string"
+        - in: "query"
+          name: "message"
+          description: "The content of the message"
+          required: true
+          schema:
+            type: "string"
+        - in: "query"
+          name: "phone_no"
+          description: "The content of the message"
+          required: true
+          schema:
+            type: "string"
+        
+      responses:
+        "400":
+          description: "Invalid response"
+        "200":
+          description: "Successful response"

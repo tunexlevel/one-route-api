@@ -16,12 +16,6 @@ class messageController {
         this.limit = data.limit || 20; //maximium number of messages to display
     }
 
-    setupConfig() {
-        //const configLink = "https://wa.me/4930609859535?text=START"
-        const message = `Send message [START] from your phone  to this mobile [4930609859535]  to get your API-KEY`;
-        return { status: 200, message: message }
-    }
-
     async receiveMessage() {
         const setup = await Message.findOne({ order: [['id', 'DESC']], where: { phone_no: this.phone_no, type: 'inbox' } });
 

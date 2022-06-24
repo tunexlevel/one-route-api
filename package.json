@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "nodemon --exec babel-node -- index.js",
+    "start": "nodemon -e js,mjs,json,yaml --exec  babel-node -- index.js",
     "make-model": "npx sequelize-cli model:generate --name Message --attributes xxx:string",
     "migrate": "npx sequelize-cli db:migrate",
     "down": "npx sequelize-cli db:migrate:undo",
@@ -19,7 +19,9 @@
     "moment": "^2.29.3",
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.21.0"
+    "sequelize": "^6.21.0",
+    "swagger-ui-express": "^4.4.0",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "sequelize-cli": "^6.4.1"
