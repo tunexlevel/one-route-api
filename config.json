@@ -1,1 +1,11 @@
 
+{
+    "env": "production",
+    "dev": {
+        "port": "400"
+    },
+    "production": {
+        "port": "4001"
+    },
+    "send_message_endpoint": "https://waba-sandbox.360dialog.io/v1/messages"
+}
