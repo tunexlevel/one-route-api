@@ -18,18 +18,12 @@ paths:
         - "message"
       summary: "Send a message to a whatsapp number"
       parameters:
-        - in: "query"
-          name: "message"
+        - in: "body"
+          name: "body"
           description: "The content of the message"
           required: true
           schema:
-            type: "string"
-        - in: "query"
-          name: "phone_no"
-          description: "The content of the message"
-          required: true
-          schema:
-            type: "string"
+            $ref: "#/definitions/Message"
       responses:
         "400":
           description: "Invalid response"
@@ -110,3 +104,91 @@ paths:
           description: "Invalid response"
         "200":
           description: "Successful response"
+  /setup:
+    post:
+      tags:
+        - "setup"
+      summary: "Create a setup for a phone number"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Setup"
+      responses:
+        "400":
+          description: "Invalid response"
+        "200":
+          description: "Successful response"
+    put:
+      tags:
+        - "setup"
+      summary: "Update a setup of a phone number"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Setup"
+      responses:
+        "400":
+          description: "Invalid response"
+        "200":
+          description: "Successful response"
+  /{phone_no}/setup:
+    delete:
+      tags:
+        - "setup"
+      summary: "Delete a setup of a phone number"
+      parameters:
+        - in: "path"
+          name: "phone_no"
+          description: "The phone number to setup"
+          example: "2348069536789"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "400":
+          description: "Invalid response"
+        "200":
+          description: "Successful response"
+    get:
+      tags:
+        - "setup"
+      summary: "Fetch a setup details"
+      parameters:
+        - in: "path"
+          name: "phone_no"
+          description: "The phone number required"
+          example: "2348069536789"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "400":
+          description: "Invalid response"
+        "200":
+          description: "Successful response"
+definitions:
+  Message:
+    type: "object"
+    properties:
+      phone_no:
+        type: "string"
+        description: "Phone number"
+        example: "2348069536789"
+      message:
+        type: "string"
+        example: "Gooday my friend!"
+  Setup:
+    type: "object"
+    properties:
+      key:
+        type: "string"
+        description: "The api key gotten from 360 whatsapp message"
+        example: "Gnmns_380i"
+      phone_no:
+        type: "string"
+        description: "Phone number"
+        example: "2348069536789"

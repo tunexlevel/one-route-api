@@ -13,24 +13,7 @@ const setup = () => {
     }
 }
 
-const setupDelete = () => {
-    return {
-        phone_no: {
-            exists: {
-                errorMessage: 'The phone number is required',
-            },
-        },
-    }
-}
 
-const setupGet = () => {
-    return {
-        phone_no: {
-            exists: {
-                errorMessage: 'The phone number is required',
-            },
-        },
-    }
-}
 
-export { setup, setupDelete, setupGet };
+
+export default setup ;

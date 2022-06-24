@@ -78,7 +78,7 @@ class messageController {
 
             const setup = await Setup.findOne({ where: { phone_no: this.phone_no } });
             if (!setup) {
-                return { status: 400, message: "You need to setup configuration for this phone number" }
+                return { status: 400, message: "Phone number not found! You need to setup configuration for this phone number" }
             }
 
             const reply = await axios({

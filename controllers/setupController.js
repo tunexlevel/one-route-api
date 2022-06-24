@@ -12,6 +12,7 @@ class setupController {
 
     async setupConfig() {
         try {
+            console.log({ key: this.key, phone_no: this.phone_no });
             const setup = await Setup.create({ key: this.key, phone_no: this.phone_no });
             return { status: 200, message: "The setup was created successfully" }
         }
@@ -23,6 +24,9 @@ class setupController {
     async getConfig() {
         try {
             const setup = await Setup.findOne({ where: { phone_no: this.phone_no } });
+            if (!setup) {
+                return { status: 400, message: "Phone number not found! You need to setup configuration for this phone number" }
+            }
             return { status: 200, message: setup }
         }
         catch (e) {
@@ -32,7 +36,12 @@ class setupController {
 
     async updateConfig() {
         try {
-            const setup = await Setup.update({ key: this.key }, { where: { phone_no: this.phone_no } });
+            const setup = await Setup.findOne({ where: { phone_no: this.phone_no } });
+            if (!setup) {
+                return { status: 400, message: "Phone number not found! You need to setup configuration for this phone number" }
+            }
+            
+            Setup.update({ key: this.key }, { where: { phone_no: this.phone_no } });
             return { status: 200, message: "The setup was updated successfully" }
         }
         catch (e) {
@@ -42,7 +51,11 @@ class setupController {
 
     async deleteConfig() {
         try {
-            const setup = await Setup.destroy({ where: { phone_no: this.phone_no } });
+            const setup = await Setup.findOne({ where: { phone_no: this.phone_no } });
+            if (!setup) {
+                return { status: 400, message: "Phone number not found! You need to setup configuration for this phone number" }
+            }
+            Setup.destroy({ where: { phone_no: this.phone_no } });
             return { status: 200, message: "The setup was deleted successfully" }
         }
         catch (e) {
