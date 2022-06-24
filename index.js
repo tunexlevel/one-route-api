@@ -16,7 +16,7 @@ const swaggerDocument = Yaml.load('./swagger.yaml');
 
 console.log("OK. Deployment mode set to ", config.env);
 
-server.listen(config[config.env].port);
+server.listen(process.env.PORT || config[config.env].port);
 
 console.log("App running on port", server.address().port);
 
