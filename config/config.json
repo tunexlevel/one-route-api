@@ -1,10 +1,16 @@
 {
-    "development": {
+  "development": {
     "username": "db8g852imfeipk",
     "password": "16c94b196cd5c1939e63addbd49560f5be9537a91610da9b9f39c786c99ee832",
     "database": "one_route_db",
     "host": "ec2-44-206-11-200.compute-1.amazonaws.com",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+          "require": true,
+          "rejectUnauthorized": false
+      }
+  }
   },
   "test": {
     "username": "root",
@@ -13,11 +19,17 @@
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
-    "production": {
+  "production": {
     "username": "db8g852imfeipk",
     "password": "16c94b196cd5c1939e63addbd49560f5be9537a91610da9b9f39c786c99ee832",
     "database": "one_route_db",
     "host": "ec2-44-206-11-200.compute-1.amazonaws.com",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+          "require": true,
+          "rejectUnauthorized": false
+      }
+    }
   }
 }
