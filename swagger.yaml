@@ -2,10 +2,10 @@ swagger: "2.0"
 info:
   description: "An API for sending and receiving whatsapp messages seemlessly"
   version: "1.0.0"
-  title: "One Route APO"
+  title: "One Route API"
   contact:
     email: "tunexlevel8@gmail.com"
-host: "localhost:400"
+host: "one-route-api.herokuapp.com"
 tags:
   - name: "message"
     description: "Everything about messages"
