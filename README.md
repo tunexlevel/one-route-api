@@ -11,8 +11,9 @@
     An API for sending and receiving whatsapp messages seemlessly
     <br />
     <br />
+    <a href="https://one-route-api.herokuapp.com">Live API</a>
     <br />
-    <a href="https://xxxxxx.com/api-docs">View Demo</a>
+    <a href="https://one-route-api.herokuapp.com/api-docs">View Demo</a>
   </p>
 </div>
 
