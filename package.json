@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "nodemon -e js,mjs,json,yaml --exec  babel-node -- index.js",
+    "start": "nodemon -e js,mjs,json,yaml --exec  babel-node -- index.ts",
     "make-model": "npx sequelize-cli model:generate --name Message --attributes xxx:string",
     "migrate": "npx sequelize-cli db:migrate",
     "down": "npx sequelize-cli db:migrate:undo",
